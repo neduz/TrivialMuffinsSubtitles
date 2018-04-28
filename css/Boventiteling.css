@@ -45,6 +45,16 @@ html, body {
 		height:100%;
 	}
 
+	#fixedbar {
+		height: 64px;
+		width: 512px;
+		border: none;
+		position: absolute;
+		left: 0px;
+		top: 0px;
+	}
+	
+
 	/**
 	 * When flex displaying multiple elements in column, use space between to justify the content.
 	 */
@@ -148,6 +158,19 @@ html, body {
     	-o-hyphens: auto;
     	word-break:normal;
     	hyphens: auto;
+	}
+	
+	.subtitleLED {
+		font-family: 'Roboto', sans-serif;
+		font-weight: normal;
+		text-align: center;
+		font-size: 18px;
+		color: white;
+		vertical-align: middle;
+	}
+
+	.banner {
+		background-image: url('/banners/TrivialMuffins.png');
 	}
 
 	/**

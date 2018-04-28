@@ -246,7 +246,7 @@ function isNumeric(n) {
 		return !isNaN(parseFloat(n)) && isFinite(n);
 };
 
-var pipeParser = d3.dsv("|", "text/plain");
+var pipeParser = d3.dsv(",", "text/plain");
 pipeParser("CurrentPlay/ondertitels.txt", parseData);
 
 function sanatize(subtitle){
@@ -261,6 +261,7 @@ function parseData(data){
 	for(var i = 0; i < data.length; i++){
 		subtitle.nl.push(sanatize(data[i].nederlands));
 		subtitle.fr.push(sanatize(data[i].frans));
+		console.log(data[i].frans);
 		subtitle.en.push(sanatize(data[i].engels));
 	}
 
