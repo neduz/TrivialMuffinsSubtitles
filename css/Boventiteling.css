@@ -173,6 +173,9 @@ html, body {
 		background-image: url('/banners/TrivialMuffins.png');
 	}
 
+	.bannerLoterij {
+		background-image: url('/banners/NationaleLoterij512x64.png');
+	}
 	/**
 	 * Subtitles that are past are colored red.
 	 */

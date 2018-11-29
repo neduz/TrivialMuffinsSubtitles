@@ -52,7 +52,7 @@ var slideBadge = d3.select("#slide");
 var downloadButton = d3.select("btn-real");
 
 //General subtitle information data
-var subtitle = {current: 0, nl: [], fr: [], en:[], length: 0, size: 72, panic: false, preview: 1, postview: 1, blackout: false};
+var subtitle = {current: 0, nl: [], fr: [], en:[], role:[], length: 0, size: 72, panic: false, preview: 1, postview: 1, blackout: false};
 
 //D3 setting up the listeners.
 d3.select("#btn-real").on('click', downloadLog);
@@ -133,7 +133,7 @@ function jumpTo(a) {
 	engels.html(returnText);
 	slide.html(returnSlideText);
 
-	globalConnection.send(JSON.stringify({type: "subtitle", nl:returnCheckBlackout(subtitle.nl[a]), fr: returnCheckBlackout(subtitle.fr[a]), en: getEnglish(a, subtitle.preview, subtitle.postview)}));
+	globalConnection.send(JSON.stringify({type: "subtitle", nl:returnCheckBlackout(subtitle.nl[a]), fr: returnCheckBlackout(subtitle.fr[a]), en: getEnglish(a, subtitle.preview, subtitle.postview), role: subtitle.role[a]}));
 	globalConnection.send(JSON.stringify({type: "note", data: "*** " + Date.now() + " ** " + a}));
 };
 
@@ -247,7 +247,9 @@ function isNumeric(n) {
 };
 
 var pipeParser = d3.dsv(",", "text/plain");
-pipeParser("CurrentPlay/ondertitels.txt", parseData);
+
+// pipeParser("CurrentPlay/ondertitels.txt", parseData);
+pipeParser("CurrentPlay/An Ideal Husand Script - combined.csv", parseData);
 
 function sanatize(subtitle){
 	if(subtitle==undefined){
@@ -262,7 +264,8 @@ function parseData(data){
 		subtitle.nl.push(sanatize(data[i].nederlands));
 		subtitle.fr.push(sanatize(data[i].frans));
 		console.log(data[i].frans);
-		subtitle.en.push(sanatize(data[i].engels));
+		subtitle.en.push("<i>" + data[i].role + ":</i> " + sanatize(data[i].engels));
+		subtitle.role.push(data[i].role);
 	}
 
 	subtitle.length = data.length;
