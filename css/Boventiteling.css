@@ -14,6 +14,7 @@ html, body {
 	background-color: black;
 	overflow-y: hidden;
 	overflow-x: hidden;
+	margin: 0px; 
 }
 
 /**
@@ -33,7 +34,7 @@ html, body {
 	.controller {
 		height:100%;
 		display: -webkit-flex;
-		display:flex; 
+		display: flex; 
 		-webkit-flex-direction: row;
 		flex-direction: row;
 	}
@@ -43,6 +44,10 @@ html, body {
 	 */
 	.container {
 		height:100%;
+	}
+
+	#controlpane {
+		display: flex;
 	}
 
 	#fixedbar {
@@ -160,6 +165,26 @@ html, body {
     	hyphens: auto;
 	}
 	
+@font-face {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: normal;
+        src:
+                local('Roboto'),
+                local('Roboto-Regular'),
+                /* from https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxK.woff2 */
+                url('Roboto.woff2') format('woff2'),
+                /* from https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxM.woff */
+                url('Roboto.woff') format('woff'),
+                /* from https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxO.eot */
+                url('Roboto.eot?#iefix') format('embedded-opentype'),
+                /* from https://fonts.gstatic.com/l/font?kit=KFOmCnqEu92Fr1Mu4mxN&skey=a0a0114a1dcab3ac&v=v18#Roboto */
+                url('Roboto.svg#Roboto') format('svg'),
+                /* from https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxP.ttf */
+                url('Roboto.ttf') format('truetype');
+}
+
+
 	.subtitleLED {
 		font-family: 'Roboto', sans-serif;
 		font-weight: normal;
@@ -167,6 +192,8 @@ html, body {
 		font-size: 18px;
 		color: white;
 		vertical-align: middle;
+		margin-top: 2px;
+		margin-bottom: 2px;
 	}
 
 	.banner {
@@ -239,7 +266,7 @@ html, body {
 	}
 
 	.hover-top{
-		position: absolute;
+		/* position: absolute; */
 		top: -10px;
 		border-bottom: 2px dashed white;
 	}

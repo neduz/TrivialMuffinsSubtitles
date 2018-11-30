@@ -7,6 +7,19 @@
 	<script src="js/d3.js"></script>
 	<script src="js/jquery-1.11.3.min.js"></script>
 	<script src="js/jquery-ui.min.js"></script>
+	<div id="fixedbar" class="embeddedviewer">
+	   <div id="Frans" class="multiple-elem lower single">
+	           <h1 id="HeaderFrans" class="slave subtitleLED">	
+		                    Français
+	            </h1>
+	    </div>
+            <div id="Nederlands" class="multiple-elem upper single">
+	            <h1 id="HeaderNederlands" class="slave subtitleLED">
+                       Nederlands
+              	</h1>
+       	    </div>
+	</div>
+	<div id="controlpane" class="container">
 	<div class="hover-top menu-horizontal">
 		<div class="badge blackout">
 			<h2>blackout</h2>
@@ -24,20 +37,7 @@
 			<h2>panic</h2>
 		</div>
 	</div>
-	<div class="controller">
-		<div id="translations" class="container multiple" style="width: 512px; flex: 1;">
-			<div id="Frans" class="multiple-elem lower single">
-				<h1 id="HeaderFrans" class="subtitleLED current">
-					Français
-				</h1>
-			</div>
-			<hr id="separator" class="multiple-mini-element symbol"/>
-			<div id="Nederlands" class="multiple-elem upper single">
-				<h1 id="HeaderNederlands" class="subtitleLED current">
-					Nederlands
-				</h1>
-			</div>
-		</div>
+	<div class="controller menu-horizontal">
 		<div id="original" class="container multiple" style="flex: 1;">
 			<h2 class="multiple-elem upper subtitleLED previous">
 				preview
@@ -70,5 +70,6 @@
 			</select>
 		</fieldset>
 	</div>
+	</div> 
 	<script src="Master-bundle.js"></script>
 </body>
