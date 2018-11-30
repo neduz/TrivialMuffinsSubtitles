@@ -73,7 +73,7 @@ function passOn(message, id){
     for(var i=0; i < clients.length; i++){
         //console.log(i);
         if(clients[i].id != id){
-            //console.log("sent to id: " + clients[i].id);
+            console.log("sent to id: " + clients[i].id + " message: " + message);
             clients[i].conn.sendUTF(message.utf8Data);
         }
     }
