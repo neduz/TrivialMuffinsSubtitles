@@ -203,6 +203,16 @@ html, body {
 	.bannerLoterij {
 		background-image: url('/banners/NationaleLoterij512x64.png');
 	}
+
+	.bannerNoPhone {
+		background-image: url('/banners/silent-phones.png');
+	}
+
+	.bannerfollowus {
+                background-image: url('/banners/follow_us.png');
+        }
+
+
 	/**
 	 * Subtitles that are past are colored red.
 	 */
