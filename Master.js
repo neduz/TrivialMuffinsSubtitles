@@ -249,7 +249,7 @@ function isNumeric(n) {
 var pipeParser = d3.dsv(",", "text/plain");
 
 // pipeParser("CurrentPlay/ondertitels.txt", parseData);
-pipeParser("CurrentPlay/An Ideal Husand Script - combined.csv", parseData);
+pipeParser("CurrentPlay/Arsenic and Old Lace subtitles - combined.csv", parseData);
 
 function sanatize(subtitle){
 	if(subtitle==undefined){
